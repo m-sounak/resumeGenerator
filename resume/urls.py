@@ -17,7 +17,10 @@ from django.contrib import admin
 from django.urls import path
 from pdf import views
 
+app_name = 'app'
 urlpatterns = [
     path('admin/', admin.site.urls), 
-    path('accept', views.accept, name="accept")
+    path('', views.home, name="home"),
+    path('accept', views.accept, name="accept"),
+    path('<int:id>/', views.resume, name="resume")
 ]

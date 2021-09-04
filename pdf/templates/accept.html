@@ -149,7 +149,8 @@
     </head>
     <body>
         <div class="main-block">
-            <form action="/" method="POST">
+            <form action="{% url 'accept' %}" method="POST">
+                {% csrf_token %}
                 <div class="title">
                     <i class="fas fa-pencil-alt"></i> 
                     <h2>Enter your details here</h2>
@@ -177,6 +178,9 @@
 
                     <h2>Achievements</h2>
                     <input type="text" name="achievements" id="achievements" placeholder="Achievements" required>
+                    
+                    <h2>Extra curricular activities</h2>
+                    <input type="text" name="extracurr" id="extracurr" placeholder="Extra curricular activities" required>
                     
                     <div class="checkbox">
                     <input type="checkbox" name="checkbox" required><span>I agree to share my information</span>
