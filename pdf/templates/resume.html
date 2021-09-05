@@ -1,12 +1,93 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta charset="UTF-8">
         <title>Educational registration form</title>
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
         <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="CSS/resume.css">
+        <style>
+            body{
+                /*background-color: rgb(138, 156, 236);*/
+                align-content: center;
+                font-family: 'Calibri';
+            }
+            .main {
+                width: 840px;
+                align-self: center;
+                background-color: white;
+                margin: auto;
+                padding: 20px;
+            }
+            hr {
+                border-top: solid 2px rgb(135, 49, 216);
+            }
+            .name h1 {
+                margin-top: 5px;
+                margin-bottom: 5px;
+                color: rgb(135, 49, 216);
+            }
+            .contacts span{
+                padding-right: 20px;
+                font-size: 14px;
+                color: black;
+            }
+            .header {
+                color: rgb(135, 49, 216);
+                margin-top: 5px;
+                margin-bottom: 5px;
+            }
+            .edu h4 {
+                margin-top: 5px;
+                margin-bottom: 5px;
+            }
+            .edu span {
+                padding-right: 40px;
+            }
+            .exp h4 {
+                margin-top: 5px;
+                margin-bottom: 5px;
+            }
+        </style>
     </head>
     <body>
-        <h2>Name</h2>
-        <h2>{{ userProfile.name }}</h2>
+        <div class="main">
+            <div class="header">
+                <div class="name"><h1>{{ userProfile.name }}</h1></div>
+                <div class="contacts">
+                    <span>{{ userProfile.email }}</span>
+                    <span>{{ userProfile.phone }}</span>
+                    <span>{{ userProfile.github }}</span>
+                    <span>{{ userProfile.linkedin }}</span>
+                </div>
+            </div>
+            <hr>
+            <div class="edu">
+                <h2 class="header">Education</h2>
+                <h4>{{ userProfile.school }}</h4>
+                <span>{{ userProfile.degree }}</span>
+                <span>CGPA: {{ userProfile.cgpa }}</span>
+            </div>
+            <hr>
+            <div class="exp">
+                <h2 class="header">Work Experience</h2>
+                <h4>{{ userProfile.post }}</h4>
+                <span>{{ userProfile.company }}</span>
+            </div>
+            <hr>
+            <div class="skills">
+                <h2 class="header">Skills</h2>
+                <span>{{ userProfile.skills }}</span>
+            </div>
+            <hr>
+            <div class="achieve">
+                <h2 class="header">Achievements</h2>
+                <span>{{ userProfile.achievements }}</span>
+            </div>
+            <hr>
+            <div class="extracurr">
+                <h2 class="header">Extra-curriccular Activities</h2>
+                <span>{{ userProfile.extracurr }}</span>
+            </div>
+        </div>
     </body>
 </html>

@@ -1,7 +1,10 @@
-from django.http.response import HttpResponseRedirect
+from django.http.response import HttpResponseRedirect, HttpResponse
 from django.shortcuts import redirect, render
 from .models import Profile
 from django.urls import reverse
+from django.template import loader
+import pdfkit
+import io
 
 
 # Create your views here.
