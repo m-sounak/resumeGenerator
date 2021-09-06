@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Educational registration form</title>
+        <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+        <style>
+            body{
+                /*background-color: rgb(138, 156, 236);*/
+                font-family: 'Calibri';
+                background: rgb(2,0,36);
+                background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgb(0, 162, 255) 100%);
+                align-content: center;
+            }
+            .main {
+                align-self: center;
+                align-content: center;
+                margin: auto;
+            }
+            div {
+                margin: auto;
+                width: fit-content;
+                align-content: center;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="main">
+            <div>
+                <h1>Thanks for using the RESUME GENERATOR!</h1>
+            </div>
+            <div>
+                <h3>Click on the link to download in PDF format.</h3>
+            </div>
+            <div class="first"><span class="downlaod"><a href="/resume/{{user.id}}">Download</a></span></div>
+            <div class="second">
+                <span class="button"><a href="/">Home</a></span>
+                <span class="button"><a href="/accept">Create New</a></span>
+            </div>
+        </div>
+    </body>
+</html>

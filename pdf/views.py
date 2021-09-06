@@ -6,6 +6,7 @@ from django.template import loader
 import pdfkit
 import io
 
+config = pdfkit.configuration(wkhtmltopdf='C:\\Program Files\\wkhtmltopdf\\bin\\wkhtmltopdf.exe')
 
 # Create your views here.
 def accept(req):
@@ -35,7 +36,11 @@ def accept(req):
             post = post, company = company, skills = skills, achievements = achievements, extracurr = extracurr)
         profile.save()
         #return HttpResponseRedirect('accept')
-        return redirect('accept')
+        n = profile.id
+        print(n)
+        urlRedirect = "download/" + n
+        
+        return redirect(urlRedirect)
 
     return render(req,"accept.html")
 
@@ -44,5 +49,19 @@ def home(req):
 
 def resume(req, id):
     userProfile = Profile.objects.get(pk = id)
-    print(userProfile.name)
-    return render(req, "resume.html", {'userProfile':userProfile})
+    template = loader.get_template("resume.html")
+    html = template.render({'userProfile':userProfile})
+    option = {
+        'page-size' : 'Letter',
+        'encoding' : 'UTF-8',
+        'enable-local-file-access': None
+    }
+    pdf = pdfkit.from_string(html, False, option, configuration=config)
+    response = HttpResponse(pdf, content_type = 'application/pdf')
+    response['Content-Disposition'] = 'attachment'
+    return response
+    #return render(req, "resume.html", {'userProfile':userProfile})
+
+def download(req, id):
+    user = Profile.objects.get(pk = id)
+    return render(req, "download.html", {'user':user})
