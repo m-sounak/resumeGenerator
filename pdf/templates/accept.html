@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Educational registration form</title>
+        <link rel="icon" href="https://previews.123rf.com/images/hironicons/hironicons1912/hironicons191201172/136455877-cv-resume-icon.jpg" type="image/gif" sizes="16x16">
+        <title>Enter details</title>
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
         <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
         <style>
@@ -45,6 +46,7 @@
                 align-items: center;
                 overflow: scroll;
                 padding: 100px;
+                padding-top: 20px;
                 background: rgba(0, 0, 0, 0.5); 
             }
 
@@ -54,7 +56,7 @@
 
             form {
                 background: rgba(0, 0, 0, 0.7); 
-                margin-top: 120px !important;
+                margin-top: 100px !important;
             }
 
             .title {
@@ -145,10 +147,24 @@
                     height: calc(100% - 50px);
                 }
             }
+            .first {
+                margin-top: 10px;
+            }
+            .button {
+                text-decoration: none;
+                font-size: 150%;
+                color: white;
+            }
+            .home {
+                padding: 10px;
+                border: 1px solid white;
+                border-radius: 10px;
+            }
         </style>
     </head>
     <body>
         <div class="main-block">
+            <div class="first"><span class="home"><a href="/" class="button">Home</a></span></div>
             <form action="{% url 'accept' %}" method="POST">
                 {% csrf_token %}
                 <div class="title">

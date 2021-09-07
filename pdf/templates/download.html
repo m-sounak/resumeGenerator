@@ -1,26 +1,60 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link rel="icon" href="https://previews.123rf.com/images/hironicons/hironicons1912/hironicons191201172/136455877-cv-resume-icon.jpg" type="image/gif" sizes="16x16">
         <meta charset="UTF-8">
-        <title>Educational registration form</title>
+        <title>Download</title>
         <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
         <style>
             body{
                 /*background-color: rgb(138, 156, 236);*/
                 font-family: 'Calibri';
                 background: rgb(2,0,36);
-                background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgb(0, 162, 255) 100%);
+                background-image: linear-gradient(to bottom right, black, black, rgb(12, 5, 66), blue);
+                min-height: 700px;
                 align-content: center;
             }
             .main {
                 align-self: center;
                 align-content: center;
                 margin: auto;
+                height: fit-content;
+                padding: 70px;
+                margin-top: 20px;
+                border-radius: 20px;
+                width: 800px;
+                background-color: rgb(218, 243, 255);
             }
             div {
                 margin: auto;
                 width: fit-content;
                 align-content: center;
+            }
+            .first {
+                background-color: rgb(11, 11, 90);
+                margin: auto;
+                padding: 10px;
+                border-radius: 10px;
+            }
+            .first:hover {
+                background-color: rgb(0, 0, 255);
+            }
+            a {
+                color: white;
+                font-size: 150%;
+                text-decoration: none;
+            }
+            .nav:first-child {
+                margin-right: 10px;
+            }
+            .nav {
+                background-color: rgb(16, 16, 202);
+                margin: auto;
+                padding: 10px;
+                border-radius: 10px;
+            }
+            .first:hover {
+                background-color: rgb(11, 11, 90);
             }
         </style>
     </head>
@@ -32,10 +66,11 @@
             <div>
                 <h3>Click on the link to download in PDF format.</h3>
             </div>
-            <div class="first"><span class="downlaod"><a href="/resume/{{user.id}}">Download</a></span></div>
+            <div class="first"><span class="downlaod"><a href="/resume/{{user.id}}" class="button">Download</a></span></div>
+            <br><br>
             <div class="second">
-                <span class="button"><a href="/">Home</a></span>
-                <span class="button"><a href="/accept">Create New</a></span>
+                <span class="nav"><a href="/" class="button">Home</a></span>
+                <span class="nav"><a href="/accept" class="button">Create New</a></span>
             </div>
         </div>
     </body>
