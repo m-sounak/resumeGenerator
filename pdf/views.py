@@ -6,7 +6,7 @@ from django.template import loader
 import pdfkit
 import io
 
-config = pdfkit.configuration(wkhtmltopdf='C:\\Program Files\\wkhtmltopdf\\bin\\wkhtmltopdf.exe')
+#config = pdfkit.configuration(wkhtmltopdf='C:\\Program Files\\wkhtmltopdf\\bin\\wkhtmltopdf.exe')
 
 # Create your views here.
 def accept(req):
@@ -56,7 +56,8 @@ def resume(req, id):
         'encoding' : 'UTF-8',
         'enable-local-file-access': None
     }
-    pdf = pdfkit.from_string(html, False, option, configuration=config)
+    #pdf = pdfkit.from_string(html, False, option, configuration=config)
+    pdf = pdfkit.from_string(html, False, option)
     response = HttpResponse(pdf, content_type = 'application/pdf')
     response['Content-Disposition'] = 'attachment'
     return response
