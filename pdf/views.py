@@ -49,6 +49,7 @@ def home(req):
 
 def resume(req, id):
     userProfile = Profile.objects.get(pk = id)
+    '''
     template = loader.get_template("resume.html")
     html = template.render({'userProfile':userProfile})
     option = {
@@ -61,7 +62,8 @@ def resume(req, id):
     response = HttpResponse(pdf, content_type = 'application/pdf')
     response['Content-Disposition'] = 'attachment'
     return response
-    #return render(req, "resume.html", {'userProfile':userProfile})
+    '''
+    return render(req, "resume.html", {'userProfile':userProfile})
 
 def download(req, id):
     user = Profile.objects.get(pk = id)
